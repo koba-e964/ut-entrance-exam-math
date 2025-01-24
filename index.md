@@ -1,4 +1,5 @@
 ---
+layout: default
 title: 東大入試数学過去問解答例
 ---
 
