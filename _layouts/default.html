@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="icon" type="image/x-icon" href="{{ page.icon }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    {{ content }}
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="kobae964" data-dnt="true">Tweet</a>
+    <script type="text/javascript">
+      !function(d,s,id){
+        var js,fjs=d.getElementsByTagName(s)[0],
+        p=/^http:/.test(d.location)?'http':'https';
+        if(!d.getElementById(id)){
+          js=d.createElement(s);js.id=id;
+          js.src=p+'://platform.twitter.com/widgets.js';
+          fjs.parentNode.insertBefore(js,fjs);
+      }}(document, 'script', 'twitter-wjs');
+    </script>
+  </body>
+</html>
