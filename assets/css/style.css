@@ -1,3 +1,13 @@
 table, th, td {
     border: 1px solid;
 }
+
+blockquote {
+    background: #f5d3f5;
+    color: #111111;
+}
+
+.highlight {
+    background: #f5f5f5;
+    color: #000000;
+}
