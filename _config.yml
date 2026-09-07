@@ -1,3 +1,6 @@
 exclude:
   - .gitignore
   - "**/.gitignore"
+  - "**/*.py"
+  - "_venv/"
+  - "**/__pycache__/"

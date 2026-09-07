@@ -1,0 +1,8 @@
+repos:
+  - repo: local
+    hooks:
+      - id: python-compile
+        name: Compile Python scripts
+        entry: python3 -m py_compile
+        language: system
+        files: ^20[0-9]{2}/.*\.py$
