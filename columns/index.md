@@ -3,3 +3,4 @@
 - [不等号の記号](./ineq)
 - [自然数と正の整数](./natural-numbers)
 - [なぜぼやきを書くのか](./boyaki)
+- [等号条件って書く必要あるの?](./when-is-it-equal)
