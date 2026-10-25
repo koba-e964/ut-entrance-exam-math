@@ -4,3 +4,4 @@
 - [自然数と正の整数](./natural-numbers)
 - [なぜぼやきを書くのか](./boyaki)
 - [等号成立条件って書く必要あるの?](./when-is-it-equal)
+- [$x^3+y^3=3xy$ のとき、$x+y$ の最大値は?](./folium-of-descartes)
