@@ -16,24 +16,37 @@
 
 また、暗黙のうちに全ての変数は実数をとるものとする。
 
-全てのタクティックについて、左側と右側が同値で、左側より右側が単純になっていることを確認されたい。
+### 1. 条件を整理する
 
-- 方程式の求解
-  - 因数分解をする。
-  - 例: $x^2 - 5x = -6$ $\Longleftrightarrow$ $(x-2)(x-3) = 0$
-    - $\Longleftrightarrow$ $x-2 = 0 \lor x-3 = 0$
-    - $\Longleftrightarrow$ $x=2 \lor x=3$
-- 代入法
-  - $x = A \land P$ $\Longleftrightarrow$ $x = A \land P\mid _ {x=A}$
-  - 例: $y = 2x + 1 \land x^2 + y^2 = 1$ $\Longleftrightarrow$ $y = 2x+1 \land x^2 + (2x+1)^2 = 1$
-    - $\Longleftrightarrow$ $y = 2x+1 \land x(5x+4)=0$ (方程式の求解)
-    - $\Longleftrightarrow$ $y = 2x+1 \land (x=0 \lor x = -\dfrac{4}{5})$ (方程式の求解)
-    - $\Longleftrightarrow$ $(y = 2x+1 \land x=0) \lor (y = 2x+1 \land x = -\dfrac{4}{5})$ (分配法則)
-    - $\Longleftrightarrow$ $(y = 1 \land x=0) \lor (y = -\dfrac{3}{5} \land x = -\dfrac{4}{5})$ (代入)
-- 束縛変数の消滅
-  - $P$ に 変数 $x$ が含まれない場合、$\exists x\ldotp P$ $\Longleftrightarrow$ $P$
-- 束縛範囲の縮小
-  - $Q$ に 変数 $x$ が含まれない場合、$\exists x\ldotp P \land Q$ $\Longleftrightarrow$ $(\exists x\ldotp P) \land Q$
+分配法則などで，場合ごとに処理できる形にする。
+
+- 例: $y=2x+1 \land (x=0 \lor x=1)$
+  - $\Longleftrightarrow$ $(y=2x+1 \land x=0) \lor (y=2x+1 \land x=1)$
+  - $\Longleftrightarrow$ $(y=1 \land x=0) \lor (y=3 \land x=1)$
+
+否定・含意・量化記号などの規則は，[論理式の規則](./logical-rules)を参照。
+
+### 2. 等式で変数を消す
+
+$x=A$ があれば代入する。以下，$A$ は $x$ を含まない式とする。
+
+- $x=A \land P$ $\Longleftrightarrow$ $x=A \land P\mid _ {x=A}$
+- $\exists x\ldotp (x=A \land P)$ $\Longleftrightarrow$ $P\mid _ {x=A}$
+
+例えば，$\exists x\ldotp (y=2x+1 \land x=0)$ $\Longleftrightarrow$ $y=1$。
+代入すると $x$ が残らないので，$\exists x$ も消える。
+
+方程式を因数分解して，代入できる形にすることもある。
+
+- 例: $x^2-5x=-6$ $\Longleftrightarrow$ $(x-2)(x-3)=0$ $\Longleftrightarrow$ $x=2 \lor x=3$
+
+### 3. 変数が存在する条件に直す
+
+区間・方程式の根・関数の値域を使って，$\exists$ を消す。
+
+- 区間が空でない条件
+  - $x$ を含まない式 $A,B$ に対して，$\exists x\ldotp (A \le x \land x \le B)$ $\Longleftrightarrow$ $A \le B$
+  - 左辺の不等号が片方でも狭義なら，右辺も $A < B$ となる。
 - 1変数のグラフ的解析
   - $\exists x\ldotp x \in I \land A = f(x)$ $\Longleftrightarrow$ $A \in (fのIにおける値域)$ (増減などを調べて値域を求める)
   - 例: $\exists x\ldotp x \ge 0 \land y = x^2 - x$ $\Longleftrightarrow$ $y \in [-1/4, \infty)$ $\Longleftrightarrow$ $y \geq -\dfrac{1}{4}$
